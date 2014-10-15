@@ -21,7 +21,7 @@ public class MainFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 
-        final TextView text = (TextView) rootView.findViewById(R.id.textView);
+        final TextView text = (TextView) rootView.findViewById(R.id.textAbout);
         final Button button = (Button) rootView.findViewById(R.id.button);
 
         button.setOnClickListener(new View.OnClickListener() {

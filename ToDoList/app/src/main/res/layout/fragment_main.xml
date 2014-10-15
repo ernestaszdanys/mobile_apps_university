@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:text="New Text"
         android:textSize="22dp"
-        android:id="@+id/textView"
+        android:id="@+id/textAbout"
         android:layout_gravity="center_horizontal" />
 
     <Button
