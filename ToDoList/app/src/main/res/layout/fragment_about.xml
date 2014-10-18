@@ -1,63 +1,71 @@
-<LinearLayout
-    android:orientation="vertical"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:weightSum="1"
-    android:layout_margin="5dp">
+    android:orientation="vertical"
+    android:padding="@dimen/main_padding">
 
     <TextView
+        android:id="@+id/textViewAbout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:text="@string/about"
-        android:id="@+id/textAbout"
-        android:layout_gravity="center_horizontal" />
+        android:textSize="@dimen/text_medium" />
 
     <TableLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal">
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/text_buttons_gap">
 
         <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
-            <ImageButton
+            <Button
+                android:id="@+id/buttonContact"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/contactButton"
-                android:background="@drawable/ic_action_email"
-                android:layout_column="0" />
+                android:layout_column="0"
+                android:layout_marginEnd="@dimen/buttons_gap"
+                android:layout_marginRight="@dimen/buttons_gap"
+                android:background="@drawable/button_contact" />
 
-            <ImageButton
+            <Button
+                android:id="@+id/buttonLike"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/likeButton"
-                android:background="@drawable/ic_action_good"
-                android:layout_column="1" />
+                android:layout_column="1"
+                android:layout_marginLeft="@dimen/buttons_gap"
+                android:layout_marginStart="@dimen/buttons_gap"
+                android:background="@drawable/button_like" />
         </TableRow>
 
         <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
             <TextView
+                android:id="@+id/textViewContact"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/contact_us"
-                android:id="@+id/textContact"
                 android:layout_column="0"
-                android:layout_gravity="center"/>
+                android:layout_marginEnd="@dimen/buttons_gap"
+                android:layout_marginRight="@dimen/buttons_gap"
+                android:gravity="center_horizontal"
+                android:text="@string/contact_us"
+                android:textSize="@dimen/text_small" />
 
             <TextView
+                android:id="@+id/textViewLike"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/like_us"
-                android:id="@+id/textLike"
                 android:layout_column="1"
-                android:layout_gravity="center"/>
+                android:layout_marginLeft="@dimen/buttons_gap"
+                android:layout_marginStart="@dimen/buttons_gap"
+                android:gravity="center_horizontal"
+                android:text="@string/like_us"
+                android:textSize="@dimen/text_small" />
         </TableRow>
     </TableLayout>
-
-
 </LinearLayout>

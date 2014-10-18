@@ -4,8 +4,8 @@
     <string name="app_name">ToDoList</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="about">Čia bus pateiktas tekstas, kuris apibūdins pagrindinę aplikacijos idėją. Taip pat bus pateikiami autorių kontaktiniai duomenys.</string>
     <string name="contact_us">Contact us!</string>
     <string name="like_us">Like us!</string>
-    <string name="about">cia bus tekstas</string>
 
 </resources>
