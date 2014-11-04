@@ -2,20 +2,14 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="@dimen/main_padding"
+    android:background="@color/application_bg">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Text"
-        android:textSize="22dp"
-        android:id="@+id/textAbout"
-        android:layout_gravity="center_horizontal" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Button"
-        android:id="@+id/button"
+        android:text="So cute :>"
+        android:id="@+id/textView"
         android:layout_gravity="center_horizontal" />
 </LinearLayout>

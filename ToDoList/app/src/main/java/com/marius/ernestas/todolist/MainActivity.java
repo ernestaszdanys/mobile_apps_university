@@ -10,7 +10,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 
-import com.marius.ernestas.todolist.fragments.MainFragment;
 import com.marius.ernestas.todolist.navigationDrawer.DrawerItem;
 import com.marius.ernestas.todolist.navigationDrawer.DrawerItemClickListener;
 import com.marius.ernestas.todolist.navigationDrawer.DrawerListAdapter;
@@ -29,9 +28,6 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        getSupportFragmentManager().beginTransaction().replace(R.id.container, new MainFragment()).commit();
-
         handleNavigationDrawer(savedInstanceState);
     }
 
@@ -54,6 +50,9 @@ public class MainActivity extends ActionBarActivity {
         // Set on click listener for list view
         android.support.v4.app.FragmentManager fragmentManager = this.getSupportFragmentManager();
         drawerListView.setOnItemClickListener(new DrawerItemClickListener(fragmentManager, drawerLayout));
+
+        // Set MainFragment as default
+        drawerListView.performItemClick(drawerListView, 0, drawerListView.getItemIdAtPosition(0));
 
         // Handle drawer toggle
         handleDrawerToggle();
