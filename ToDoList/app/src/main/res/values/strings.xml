@@ -8,4 +8,11 @@
     <string name="contact_us">Contact us!</string>
     <string name="like_us">Like us!</string>
 
+    <!-- Navigation Drawer Menu Items -->
+    <string-array name="menu_items">
+        <item>Home</item>
+        <item>Settings</item>
+        <item>About</item>
+    </string-array>
+
 </resources>

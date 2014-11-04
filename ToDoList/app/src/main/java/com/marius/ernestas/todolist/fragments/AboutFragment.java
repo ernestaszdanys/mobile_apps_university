@@ -1,4 +1,4 @@
-package com.marius.ernestas.todolist;
+package com.marius.ernestas.todolist.fragments;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -9,6 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+
+import com.marius.ernestas.todolist.R;
 
 public class AboutFragment extends Fragment {
 
@@ -45,7 +47,7 @@ public class AboutFragment extends Fragment {
         Intent emailIntent = new Intent(Intent.ACTION_SEND);
         emailIntent.setType("plain/text");
         emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{"ernestas13@gmail.com", "zilinskas.m@gmail.com"});
-        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "I would like to contact you about our application!");
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "I would like to contact you about your application!");
         startActivity(Intent.createChooser(emailIntent, ""));
     }
 
