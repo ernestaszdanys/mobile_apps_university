@@ -1,5 +1,6 @@
 package com.marius.ernestas.todolist.fragments;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -11,11 +12,16 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.marius.ernestas.todolist.R;
+import com.marius.ernestas.todolist.database.Database;
 
+@SuppressLint("ValidFragment")
 public class AboutFragment extends Fragment {
 
     private Button contactButton;
     private Button likeButton;
+
+    public AboutFragment() {
+    }
 
 
     @Override

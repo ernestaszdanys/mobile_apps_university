@@ -10,6 +10,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 
+import com.marius.ernestas.todolist.database.Database;
+import com.marius.ernestas.todolist.database.Note;
 import com.marius.ernestas.todolist.navigationDrawer.DrawerItem;
 import com.marius.ernestas.todolist.navigationDrawer.DrawerItemClickListener;
 import com.marius.ernestas.todolist.navigationDrawer.DrawerListAdapter;
@@ -19,6 +21,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends ActionBarActivity {
 
+    public Database database;
     private String[] menuList;
     private DrawerLayout drawerLayout;
     private ListView drawerListView;
@@ -28,6 +31,10 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        database = new Database(this);
+        database.addNote(new Note(1, "Pavadinimas", "Kazka darysim cj"));
+
         handleNavigationDrawer(savedInstanceState);
     }
 
@@ -49,7 +56,7 @@ public class MainActivity extends ActionBarActivity {
 
         // Set on click listener for list view
         android.support.v4.app.FragmentManager fragmentManager = this.getSupportFragmentManager();
-        drawerListView.setOnItemClickListener(new DrawerItemClickListener(fragmentManager, drawerLayout));
+        drawerListView.setOnItemClickListener(new DrawerItemClickListener(fragmentManager, database, drawerLayout));
 
         // Set MainFragment as default
         drawerListView.performItemClick(drawerListView, 0, drawerListView.getItemIdAtPosition(0));

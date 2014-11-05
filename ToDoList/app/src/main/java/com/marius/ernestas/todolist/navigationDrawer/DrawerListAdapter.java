@@ -43,7 +43,7 @@ public class DrawerListAdapter extends BaseAdapter {
             view = layoutInflater.inflate(R.layout.drawer_list_item, null);
         }
 
-        TextView titleTextView = (TextView) view.findViewById(R.id.title);
+        TextView titleTextView = (TextView) view.findViewById(R.id.textViewTitle);
         titleTextView.setText(drawerItems.get(position).getTitle());
 
         return view;

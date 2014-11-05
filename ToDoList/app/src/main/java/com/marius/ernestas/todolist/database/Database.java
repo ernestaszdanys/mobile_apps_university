@@ -172,13 +172,12 @@ public class Database extends SQLiteOpenHelper {
         // Get access to database
         SQLiteDatabase database = this.getWritableDatabase();
 
-        //try {
-        //database.execSQL("DELETE FROM " + TABLE_ENTRY + " WHERE " + KEY_ID + " = " + id, null);
-        database.delete(TABLE_ENTRY, KEY_ID + "=?", new String[]{String.valueOf(id)});
-        //} catch (Exception e) {
-        //    Log.e("Database", e.toString());
-        //    throw new IllegalStateException("Database is not opened!");
-        //}
+        try {
+            database.delete(TABLE_ENTRY, KEY_ID + "=?", new String[]{String.valueOf(id)});
+        } catch (Exception e) {
+            Log.e("Database", e.toString());
+            throw new IllegalStateException("Database is not opened!");
+        }
 
         database.close();
     }
