@@ -15,4 +15,9 @@
         <item>About</item>
     </string-array>
 
+    <!-- Navigation Drawer Menu Items -->
+    <string-array name="languages">
+        <item>English</item>
+        <item>Lietuvių</item>
+    </string-array>
 </resources>

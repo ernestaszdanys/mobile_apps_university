@@ -11,6 +11,7 @@ import com.marius.ernestas.todolist.R;
 import com.marius.ernestas.todolist.database.Database;
 import com.marius.ernestas.todolist.fragments.AboutFragment;
 import com.marius.ernestas.todolist.fragments.MainFragment;
+import com.marius.ernestas.todolist.fragments.SettingsFragment;
 
 public class DrawerItemClickListener implements ListView.OnItemClickListener {
 
@@ -31,6 +32,9 @@ public class DrawerItemClickListener implements ListView.OnItemClickListener {
         switch (position) {
             case 0:
                 fragment = new MainFragment(database);
+                break;
+            case 1:
+                fragment = new SettingsFragment();
                 break;
             case 2:
                 fragment = new AboutFragment();
