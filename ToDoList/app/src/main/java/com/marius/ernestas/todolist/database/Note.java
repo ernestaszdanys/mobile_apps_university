@@ -16,7 +16,8 @@ public class Note {
         setDescription(description);
     }
 
-    public Note(int importance, String title, String description) {
+    public Note(String date, int importance, String title, String description) {
+        setDate(date);
         setImportance(importance);
         setTitle(title);
         setDescription(description);

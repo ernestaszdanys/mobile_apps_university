@@ -23,7 +23,6 @@ public class Database extends SQLiteOpenHelper {
     private String KEY_IMPORTANCE = "importance";
     private String KEY_TITLE = "title";
     private String KEY_DESCRIPTION = "description";
-    private String DATE_FORMAT = "yyyy-mm-dd";
 
 
     public Database(Context context) {
@@ -65,7 +64,7 @@ public class Database extends SQLiteOpenHelper {
 
         // Gather values
         ContentValues values = new ContentValues();
-        values.put(KEY_DATE, getDate());
+        values.put(KEY_DATE, note.getDate());
         values.put(KEY_IMPORTANCE, note.getImportance());
         values.put(KEY_TITLE, note.getTitle());
         values.put(KEY_DESCRIPTION, note.getDescription());
@@ -78,13 +77,6 @@ public class Database extends SQLiteOpenHelper {
         }
 
         database.close();
-    }
-
-
-    private String getDate() {
-        SimpleDateFormat simpleDate = new SimpleDateFormat(DATE_FORMAT);
-        String date = simpleDate.format(new Date());
-        return date;
     }
 
     public int getNoteCount() throws IllegalStateException {

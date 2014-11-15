@@ -8,16 +8,23 @@
     <string name="contact_us">Contact us!</string>
     <string name="like_us">Like us!</string>
 
-    <!-- Navigation Drawer Menu Items -->
+    <!-- Navigation drawer menu items -->
     <string-array name="menu_items">
         <item>Home</item>
         <item>Settings</item>
         <item>About</item>
     </string-array>
 
-    <!-- Navigation Drawer Menu Items -->
+    <!-- Available languages -->
     <string-array name="languages">
         <item>English</item>
         <item>Lietuvių</item>
+    </string-array>
+
+    <!-- Importance -->
+    <string-array name="importance">
+        <item>Important</item>
+        <item>Major</item>
+        <item>Primary</item>
     </string-array>
 </resources>

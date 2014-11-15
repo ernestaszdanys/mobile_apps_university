@@ -33,7 +33,6 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
 
         database = new Database(this);
-        database.addNote(new Note(1, "Pavadinimas", "Kazka darysim cj"));
 
         handleNavigationDrawer(savedInstanceState);
     }

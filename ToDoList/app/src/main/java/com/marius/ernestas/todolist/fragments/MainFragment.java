@@ -35,7 +35,7 @@ public class MainFragment extends Fragment {
         newButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container, new AboutFragment())
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container, new AddNote(database))
                         .addToBackStack(null).commit();
             }
         });
