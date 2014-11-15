@@ -42,7 +42,7 @@
         android:layout_height="wrap_content"
         android:text="Importance"
         android:textSize="@dimen/text_medium"
-        android:id="@+id/textViewImportance"
+        android:id="@+id/imageViewImportance"
         android:layout_below="@+id/textViewDate"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />

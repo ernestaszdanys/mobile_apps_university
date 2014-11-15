@@ -1,54 +1,61 @@
-<RelativeLayout
+<TableLayout
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:layout_marginTop="@dimen/note_item_margin"
+    android:layout_marginBottom="@dimen/note_item_margin"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="2"
-        android:id="@+id/textViewImportance"
-        android:textSize="60dp"
-        android:textColor="@color/textHighlight"
-        android:layout_marginRight="@dimen/entry_item_importance_text_margin"
-        android:layout_marginEnd="@dimen/entry_item_importance_text_margin"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Title"
-        android:textSize="@dimen/text_large"
-        android:textColor="@color/textSimple"
-        android:id="@+id/textViewTitle"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/textViewImportance"
-        android:layout_toEndOf="@+id/textViewImportance" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="@dimen/note_item_importance_text_margin"
+            android:layout_marginEnd="@dimen/note_item_importance_text_margin"
+            android:layout_column="0">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Description is going to be placed here..."
-        android:id="@+id/textViewDescription"
-        android:textSize="@dimen/text_small"
-        android:textColor="@color/textSimple"
-        android:layout_marginTop="@dimen/note_item_text_view_margin"
-        android:layout_marginBottom="@dimen/note_item_text_view_margin"
-        android:layout_below="@+id/textViewTitle"
-        android:layout_toRightOf="@+id/textViewImportance"
-        android:layout_toEndOf="@+id/textViewImportance" />
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/imageViewImportance"
+                android:background="@drawable/primary" />
+        </LinearLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Liepos 69  16:20"
-        android:id="@+id/textViewDate"
-        android:textSize="@dimen/text_small"
-        android:textColor="@color/textHighlight2"
-        android:layout_below="@+id/textViewDescription"
-        android:layout_alignLeft="@+id/textViewDescription"
-        android:layout_alignStart="@+id/textViewDescription" />
-</RelativeLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Title"
+                android:textSize="@dimen/text_large"
+                android:textColor="@color/textSimple"
+                android:id="@+id/textViewTitle" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Description is going to be placed here..."
+                android:id="@+id/textViewDescription"
+                android:textSize="@dimen/text_small"
+                android:textColor="@color/textSimple"
+                android:layout_marginTop="@dimen/note_item_text_view_margin"
+                android:layout_marginBottom="@dimen/note_item_text_view_margin" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2014-04-15"
+                android:id="@+id/textViewDate"
+                android:textSize="@dimen/text_small"
+                android:textColor="@color/textHighlight2" />
+        </LinearLayout>
+    </TableRow>
+</TableLayout>

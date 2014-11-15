@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.marius.ernestas.todolist.database.Note;
@@ -43,7 +44,7 @@ public class NoteAdapter extends BaseAdapter {
             view = layoutInflater.inflate(R.layout.note_item, null);
         }
 
-        TextView importanceTextView = (TextView) view.findViewById(R.id.textViewImportance);
+        ImageView importanceImageView = (ImageView) view.findViewById(R.id.imageViewImportance);
         TextView titleTextView = (TextView) view.findViewById(R.id.textViewTitle);
         TextView descriptionTextView = (TextView) view.findViewById(R.id.textViewDescription);
         TextView dateTextView = (TextView) view.findViewById(R.id.textViewDate);
@@ -51,7 +52,18 @@ public class NoteAdapter extends BaseAdapter {
         Note note = getItem(position);
 
         if (note != null) {
-            importanceTextView.setText(String.valueOf(note.getImportance()));
+            switch (note.getImportance()) {
+                case 1:
+                    // Using deprecated setBackgroundDrawable method in order to support api level 10
+                    importanceImageView.setBackgroundDrawable(context.getResources().getDrawable(R.drawable.important));
+                    break;
+                case 2:
+                    importanceImageView.setBackgroundDrawable(context.getResources().getDrawable(R.drawable.major));
+                    break;
+                case 3:
+                    importanceImageView.setBackgroundDrawable(context.getResources().getDrawable(R.drawable.primary));
+                    break;
+            }
             titleTextView.setText(note.getTitle());
             descriptionTextView.setText(note.getDescription());
             dateTextView.setText(note.getDate());
