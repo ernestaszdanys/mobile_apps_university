@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 
@@ -47,5 +48,15 @@ public class MainFragment extends Fragment {
         if (database.getNoteCount() != 0) {
             notesListView.setAdapter(new NoteAdapter(getActivity(), database.getAllNotes()));
         }
+
+        notesListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+                DeleteNoteFragment newFragment = new DeleteNoteFragment(database, i);
+                newFragment.show(getActivity().getSupportFragmentManager(), "deleteConfirmation");
+
+                return false;
+            }
+        });
     }
 }

@@ -100,9 +100,9 @@ public class AddNote extends Fragment {
     }
 
     private boolean checkData() {
-        if (titleEditText.getText().length() == 0 ||
-                date.length() == 0 ||
-                descriptionEditText.getText().length() == 0) {
+        if (titleEditText.getText() == null ||
+                date == null ||
+                descriptionEditText.getText() == null) {
             Toast.makeText(getActivity(), "All fields have to be filled!", Toast.LENGTH_LONG).show();
             return false;
         }
