@@ -36,7 +36,7 @@ public class SettingsFragment extends Fragment {
         sharedPreferences = getActivity().getSharedPreferences("Settings", Context.MODE_PRIVATE);
 
         handleSpinner();
-        handleNotifiButton();
+        handleNotificationButton();
 
         return rootView;
     }
@@ -67,7 +67,7 @@ public class SettingsFragment extends Fragment {
     }
 
     // FIXME: this is a ghetto way of doing a text button... I feel ashamed...
-    private void handleNotifiButton() {
+    private void handleNotificationButton() {
         if (sharedPreferences.getBoolean(notifications, true)) {
             notifiButtonTextView.setText("ON");
             notifiButtonTextView.setTextColor(getResources().getColor(R.color.textHighlight2));
