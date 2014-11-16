@@ -53,15 +53,18 @@ public class NoteAdapter extends BaseAdapter {
 
         if (note != null) {
             switch (note.getImportance()) {
-                case 1:
+                case 0:
                     // Using deprecated setBackgroundDrawable method in order to support api level 10
                     importanceImageView.setBackgroundDrawable(context.getResources().getDrawable(R.drawable.important));
                     break;
-                case 2:
+                case 1:
                     importanceImageView.setBackgroundDrawable(context.getResources().getDrawable(R.drawable.major));
                     break;
-                case 3:
+                case 2:
                     importanceImageView.setBackgroundDrawable(context.getResources().getDrawable(R.drawable.primary));
+                    break;
+                default:
+                    importanceImageView.setBackgroundDrawable(context.getResources().getDrawable(R.drawable.important));
                     break;
             }
             titleTextView.setText(note.getTitle());

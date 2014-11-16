@@ -37,7 +37,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Change language"
+        android:text="Language"
         android:textSize="@dimen/text_medium"
         android:id="@+id/textViewChangeLanguage"
         android:layout_alignParentLeft="true"
