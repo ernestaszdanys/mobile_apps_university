@@ -56,6 +56,14 @@
                 android:id="@+id/textViewDate"
                 android:textSize="@dimen/text_small"
                 android:textColor="@color/textHighlight2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewId"
+                android:text=""
+                android:visibility="gone"
+                android:layout_gravity="center_horizontal" />
         </LinearLayout>
     </TableRow>
 </TableLayout>
