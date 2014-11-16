@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.marius.ernestas.todolist.database.Note;
 
@@ -48,6 +49,7 @@ public class NoteAdapter extends BaseAdapter {
         TextView titleTextView = (TextView) view.findViewById(R.id.textViewTitle);
         TextView descriptionTextView = (TextView) view.findViewById(R.id.textViewDescription);
         TextView dateTextView = (TextView) view.findViewById(R.id.textViewDate);
+        TextView textViewId = (TextView) view.findViewById(R.id.textViewId);
 
         Note note = getItem(position);
 
@@ -70,6 +72,8 @@ public class NoteAdapter extends BaseAdapter {
             titleTextView.setText(note.getTitle());
             descriptionTextView.setText(note.getDescription());
             dateTextView.setText(note.getDate());
+            textViewId.setText(note.getId() + "");
+            //Toast.makeText(context, note.getId() + "" , Toast.LENGTH_LONG).show();
         }
 
         return view;

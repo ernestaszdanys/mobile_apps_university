@@ -7,8 +7,11 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.marius.ernestas.todolist.NoteAdapter;
 import com.marius.ernestas.todolist.R;
@@ -43,9 +46,25 @@ public class MainFragment extends Fragment {
         return rootView;
     }
 
-    private void handleNotes(ListView notesListView) {
+    public void handleNotes(final ListView notesListView) {
+
         if (database.getNoteCount() != 0) {
-            notesListView.setAdapter(new NoteAdapter(getActivity(), database.getAllNotes()));
+            final NoteAdapter noteAdapter = new NoteAdapter(getActivity(), database.getAllNotes());
+            notesListView.setAdapter(noteAdapter);
+
+            notesListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+                @Override
+                public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+                    TextView textViewId = (TextView) view.findViewById(R.id.textViewId);
+
+                    Toast.makeText(getActivity(), textViewId.getText().toString() + "", Toast.LENGTH_LONG).show();
+
+                    DeleteNoteFragment newFragment = new DeleteNoteFragment(database, Integer.parseInt(textViewId.getText().toString()));
+                    newFragment.show(getActivity().getSupportFragmentManager(), "deleteConfirmation");
+
+                    return false;
+                }
+            });
         }
     }
 }

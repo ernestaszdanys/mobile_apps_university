@@ -7,6 +7,9 @@
     <string name="about">Čia bus pateiktas tekstas, kuris apibūdins pagrindinę aplikacijos idėją. Taip pat bus pateikiami autorių kontaktiniai duomenys.</string>
     <string name="contact_us">Contact us!</string>
     <string name="like_us">Like us!</string>
+    <string name="dialog_delete_note">Delete this note?</string>
+    <string name="dialog_delete_confirm">YES</string>
+    <string name="dialog_delete_denny">NO</string>
 
     <!-- Navigation drawer menu items -->
     <string-array name="menu_items">
