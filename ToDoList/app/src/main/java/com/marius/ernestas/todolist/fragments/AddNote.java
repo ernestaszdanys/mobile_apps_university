@@ -64,7 +64,7 @@ public class AddNote extends Fragment {
     }
 
     private void setDate() {
-        DialogFragment newFragment = new DatePickerFragment();
+        DialogFragment newFragment = new DatePickerFragment(setDateButtonTextView);
         newFragment.show(getActivity().getSupportFragmentManager(), "datePicker");
     }
 
