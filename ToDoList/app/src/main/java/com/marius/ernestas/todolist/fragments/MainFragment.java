@@ -24,9 +24,11 @@ import com.marius.ernestas.todolist.database.Database;
 public class MainFragment extends Fragment {
 
     private Database database;
+    private int sortType;
 
     public MainFragment(Database database) {
         this.database = database;
+        this.sortType = 0;
     }
 
     @Override
@@ -88,7 +90,17 @@ public class MainFragment extends Fragment {
         // Handle item selection
         switch (item.getItemId()) {
             case R.id.menu_date:
-                Toast.makeText(getActivity(), "Works like a charm!", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "date", Toast.LENGTH_LONG).show();
+
+                sortType = 1;
+                return true;
+            case R.id.menu_importance:
+                Toast.makeText(getActivity(), "importance", Toast.LENGTH_LONG).show();
+                sortType = 2;
+                return true;
+            case R.id.menu_input_date:
+                Toast.makeText(getActivity(), "input_date", Toast.LENGTH_LONG).show();
+                sortType = 3;
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
