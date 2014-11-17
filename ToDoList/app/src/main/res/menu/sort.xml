@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:todolist="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/sort"
+        android:icon="@drawable/ic_action_sort_by_size"
+        android:title="Sort"
+        todolist:showAsAction="ifRoom">
+        <menu>
+            <item
+                android:id="@+id/menu_date"
+                android:title="By Date"
+                todolist:showAsAction="never"/>
+            <item
+                android:id="@+id/menu_importance"
+                android:title="By Importance"
+                todolist:showAsAction="never"/>
+            <item
+                android:id="@+id/menu_input_date"
+                android:title="By Input Date"
+                todolist:showAsAction="never"/>
+        </menu>
+    </item>
+</menu>
