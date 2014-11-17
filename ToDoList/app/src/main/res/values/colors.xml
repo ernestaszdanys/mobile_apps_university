@@ -2,10 +2,16 @@
 <resources>
     <color name="application_bg">#f2f2f2</color>
     <color name="textSimple">#494949</color>
-    <color name="textHighlight">#19881e</color>
-    <!--<color name="textHighlight">#3F51B5</color>-->
-    <color name="textHighlight2">#236792</color>
-    <!--<color name="textHighlight2">#F50057</color>-->
-    <color name="divider">#19881e</color>
-    <!--<color name="divider">#303F9F</color>-->
+    <!--<color name="textHighlight">#19881e</color>-->
+
+    <!--tab indicator color-->
+    <color name="textHighlight">#283593</color>
+    <!--<color name="textHighlight2">#236792</color>-->
+
+    <!--pink button and text color-->
+    <color name="textHighlight2">#F50057</color>
+    <!--<color name="divider">#19881e</color>-->
+
+    <!--action bar color-->
+    <color name="divider">#3F51B5</color>
 </resources>

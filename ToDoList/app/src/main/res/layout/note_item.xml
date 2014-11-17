@@ -55,7 +55,7 @@
                 android:text="2014-04-15"
                 android:id="@+id/textViewDate"
                 android:textSize="@dimen/text_small"
-                android:textColor="@color/textHighlight2" />
+                android:textColor="@color/textHighlight" />
 
             <TextView
                 android:layout_width="wrap_content"
