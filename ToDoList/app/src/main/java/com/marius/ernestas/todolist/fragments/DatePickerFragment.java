@@ -6,10 +6,20 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.DialogFragment;
 import android.widget.DatePicker;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.marius.ernestas.todolist.R;
 
 import java.util.Calendar;
 
 public class DatePickerFragment extends DialogFragment implements DatePickerDialog.OnDateSetListener {
+
+    private TextView dateTextView;
+
+    public DatePickerFragment(TextView dateTextView) {
+        this.dateTextView = dateTextView;
+    }
 
     @NonNull
     @Override
@@ -27,5 +37,7 @@ public class DatePickerFragment extends DialogFragment implements DatePickerDial
     @Override
     public void onDateSet(DatePicker datePicker, int i, int i2, int i3) {
         AddNote.date = i + "-" + (i2 < 10 ? "0" : "") + i2 + "-" + (i3 < 10 ? "0" : "") + i3;
+        dateTextView.setText(AddNote.date);
+        dateTextView.setTextColor(getResources().getColor(R.color.textSimple));
     }
 }
