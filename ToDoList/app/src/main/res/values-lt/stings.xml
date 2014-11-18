@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ToDoList</string>
+    <string name="action_settings">Nustatymai</string>
+    <string name="about">Čia bus pateiktas tekstas, kuris apibūdins pagrindinę aplikacijos idėją. Taip pat bus pateikiami autorių kontaktiniai duomenys.</string>
+    <string name="contact_us">Susisiekite!</string>
+    <string name="like_us">Įvertinkite!</string>
+    <string name="dialog_delete_note">Ar tikrai norite ištrinti?</string>
+    <string name="dialog_delete_confirm">TAIP</string>
+    <string name="dialog_delete_denny">NE</string>
+
+    <string name="on">Įjungta</string>
+    <string name="off">Išjungta</string>
+    <string name="notifications">Pranešimai</string>
+    <string name="language">Kalba</string>
+
+    <string name="by_date">Pagal datą</string>
+    <string name="by_importance">Pagal svarbą</string>
+    <string name="by_input_date">Pagal pridėjimo datą</string>
+
+    <string name="title">Pavadinimas</string>
+    <string name="date">Data</string>
+    <string name="set_date">Nustatyti datą</string>
+    <string name="importance">Svarba</string>
+    <string name="description">Aprašymas</string>
+
+
+    <!-- Navigation drawer menu items -->
+    <string-array name="menu_items">
+        <item>Pagrindinis</item>
+        <item>Nustatymai</item>
+        <item>Apie</item>
+    </string-array>
+
+    <!-- Available languages -->
+    <string-array name="languages">
+        <item>English</item>
+        <item>Lietuvių</item>
+    </string-array>
+
+    <!-- Importance -->
+    <string-array name="importance">
+        <item>Svarbei</item>
+        <item>Svarbeu</item>
+        <item>Svarbeusei</item>
+    </string-array>
+</resources>

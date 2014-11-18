@@ -17,7 +17,7 @@ import com.marius.ernestas.todolist.R;
 
 public class SettingsFragment extends Fragment {
 
-    private TextView notifiButtonTextView;
+    private TextView notificationButtonTextView;
     private Spinner spinnerLanguages;
     private SharedPreferences sharedPreferences;
 
@@ -30,7 +30,7 @@ public class SettingsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_settings, container, false);
 
-        notifiButtonTextView = (TextView) rootView.findViewById(R.id.textButtonNotifications);
+        notificationButtonTextView = (TextView) rootView.findViewById(R.id.textButtonNotifications);
         spinnerLanguages = (Spinner) rootView.findViewById(R.id.spinnerLanguages);
 
         sharedPreferences = getActivity().getSharedPreferences("Settings", Context.MODE_PRIVATE);
@@ -69,30 +69,30 @@ public class SettingsFragment extends Fragment {
     // FIXME: this is a ghetto way of doing a text button... I feel ashamed...
     private void handleNotificationButton() {
         if (sharedPreferences.getBoolean(notifications, true)) {
-            notifiButtonTextView.setText("ON");
-            notifiButtonTextView.setTextColor(getResources().getColor(R.color.textHighlight2));
+            notificationButtonTextView.setText(getResources().getString(R.string.on));
+            notificationButtonTextView.setTextColor(getResources().getColor(R.color.textHighlight2));
         } else {
-            notifiButtonTextView.setText("OFF");
-            notifiButtonTextView.setTextColor(getResources().getColor(R.color.textSimple));
+            notificationButtonTextView.setText(R.string.off);
+            notificationButtonTextView.setTextColor(getResources().getColor(R.color.textSimple));
         }
 
-        notifiButtonClick();
+        notificationButtonClick();
     }
 
-    private void notifiButtonClick() {
+    private void notificationButtonClick() {
         final SharedPreferences.Editor editor = sharedPreferences.edit();
 
-        notifiButtonTextView.setOnClickListener(new View.OnClickListener() {
+        notificationButtonTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (notifiButtonTextView.getText() == "OFF") {
-                    notifiButtonTextView.setText("ON");
-                    notifiButtonTextView.setTextColor(getResources().getColor(R.color.textHighlight2));
+                if (notificationButtonTextView.getText() == getResources().getString(R.string.off)) {
+                    notificationButtonTextView.setText(getResources().getString(R.string.on));
+                    notificationButtonTextView.setTextColor(getResources().getColor(R.color.textHighlight2));
 
                     editor.putBoolean(notifications, true).apply();
                 } else {
-                    notifiButtonTextView.setText("OFF");
-                    notifiButtonTextView.setTextColor(getResources().getColor(R.color.textSimple));
+                    notificationButtonTextView.setText(getResources().getString(R.string.off));
+                    notificationButtonTextView.setTextColor(getResources().getColor(R.color.textSimple));
 
                     editor.putBoolean(notifications, false).apply();
 

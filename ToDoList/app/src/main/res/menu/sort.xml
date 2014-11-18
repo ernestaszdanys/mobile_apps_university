@@ -10,15 +10,15 @@
         <menu>
             <item
                 android:id="@+id/menu_date"
-                android:title="By Date"
+                android:title="@string/by_date"
                 todolist:showAsAction="never"/>
             <item
                 android:id="@+id/menu_importance"
-                android:title="By Importance"
+                android:title="@string/by_importance"
                 todolist:showAsAction="never"/>
             <item
                 android:id="@+id/menu_input_date"
-                android:title="By Input Date"
+                android:title="@string/by_input_date"
                 todolist:showAsAction="never"/>
         </menu>
     </item>
