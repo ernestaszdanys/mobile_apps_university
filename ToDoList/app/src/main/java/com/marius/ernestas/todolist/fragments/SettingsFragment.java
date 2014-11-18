@@ -2,6 +2,8 @@ package com.marius.ernestas.todolist.fragments;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -14,6 +16,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.marius.ernestas.todolist.R;
+
+import java.util.Locale;
 
 public class SettingsFragment extends Fragment {
 
@@ -57,7 +61,25 @@ public class SettingsFragment extends Fragment {
         spinnerLanguages.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int i, long l) {
-                editor.putLong(language, (parent.getItemIdAtPosition(i))).apply();
+
+                String languageToLoad = null;
+                switch (i) {
+                    case 0 : languageToLoad = "en"; break;
+                    case 1 : languageToLoad = "lt"; break;
+                }
+                Locale locale = new Locale(languageToLoad);
+                Locale.setDefault(locale);
+                Configuration config = getResources().getConfiguration();
+                config.locale = locale;
+
+                Resources resources = getActivity().getBaseContext().getResources();
+                resources.updateConfiguration(config, resources.getDisplayMetrics());
+
+                if (sharedPreferences.getLong(language, 0) != i) {
+                    editor.putLong(language, (parent.getItemIdAtPosition(i))).apply();
+                    getActivity().finish();
+                    startActivity(getActivity().getIntent());
+                }
             }
 
             @Override
@@ -102,3 +124,11 @@ public class SettingsFragment extends Fragment {
     }
 
 }
+
+/*String languageToLoad = "lt";
+Locale locale = new Locale(languageToLoad);
+Locale.setDefault(locale);
+Configuration config = getResources().getConfiguration();
+config.locale = locale;
+getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());*/
+

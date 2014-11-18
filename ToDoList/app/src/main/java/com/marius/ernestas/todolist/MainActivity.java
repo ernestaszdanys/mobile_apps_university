@@ -11,7 +11,6 @@ import android.view.View;
 import android.widget.ListView;
 
 import com.marius.ernestas.todolist.database.Database;
-import com.marius.ernestas.todolist.database.Note;
 import com.marius.ernestas.todolist.navigationDrawer.DrawerItem;
 import com.marius.ernestas.todolist.navigationDrawer.DrawerItemClickListener;
 import com.marius.ernestas.todolist.navigationDrawer.DrawerListAdapter;
