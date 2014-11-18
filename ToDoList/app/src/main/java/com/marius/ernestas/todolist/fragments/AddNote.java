@@ -100,16 +100,16 @@ public class AddNote extends Fragment {
             Toast.makeText(getActivity(), "Note has been added!", Toast.LENGTH_LONG).show();
             getActivity().getSupportFragmentManager().popBackStack();
         }
+        else {
+            Toast.makeText(getActivity(), "All fields have to be filled!", Toast.LENGTH_LONG).show();
+        }
     }
 
     private boolean checkData() {
-        if (titleEditText.getText().toString().length() == 0 ||
-                date == null ||
+        if (titleEditText.getText().toString().length() == 0 || date == null ||
                 descriptionEditText.getText().toString().length() == 0) {
-            Toast.makeText(getActivity(), "All fields have to be filled!", Toast.LENGTH_LONG).show();
             return false;
         }
-
         return true;
     }
 
