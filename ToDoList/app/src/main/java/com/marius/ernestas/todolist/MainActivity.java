@@ -89,8 +89,8 @@ public class MainActivity extends ActionBarActivity {
 
     public boolean onPrepareOptionsMenu(Menu menu) {
         // If navigation drawer is opened, hide the action bar items
-        boolean drawerOpen = drawerLayout.isDrawerOpen(drawerListView);
-        // TODO: hide action bar icons...
+        menu.setGroupVisible(0, drawerLayout.isDrawerOpen(drawerListView) ? false : true);
+
         return super.onPrepareOptionsMenu(menu);
     }
 
