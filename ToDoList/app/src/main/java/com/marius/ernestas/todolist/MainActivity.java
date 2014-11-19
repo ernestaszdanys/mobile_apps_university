@@ -36,6 +36,13 @@ public class MainActivity extends ActionBarActivity {
         handleNavigationDrawer(savedInstanceState);
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        
+        database.closeDatabase();
+    }
+
     private void handleNavigationDrawer(Bundle savedInstanceState) {
         menuList = getResources().getStringArray(R.array.menu_items);
         drawerLayout = (DrawerLayout) findViewById(R.id.main_activity_layout);
