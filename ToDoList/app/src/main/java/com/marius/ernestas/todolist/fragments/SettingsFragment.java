@@ -21,11 +21,9 @@ import java.util.Locale;
 
 public class SettingsFragment extends Fragment {
 
-    private TextView notificationButtonTextView;
     private Spinner spinnerLanguages;
     private SharedPreferences sharedPreferences;
 
-    private String notifications = "notificationsKey";
     private String language = "languageKey";
 
     public SettingsFragment() {
@@ -34,13 +32,11 @@ public class SettingsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_settings, container, false);
 
-        notificationButtonTextView = (TextView) rootView.findViewById(R.id.textButtonNotifications);
         spinnerLanguages = (Spinner) rootView.findViewById(R.id.spinnerLanguages);
 
         sharedPreferences = getActivity().getSharedPreferences("Settings", Context.MODE_PRIVATE);
 
         handleSpinner();
-        handleNotificationButton();
 
         return rootView;
     }
@@ -84,41 +80,6 @@ public class SettingsFragment extends Fragment {
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-            }
-        });
-    }
-
-    // FIXME: this is a ghetto way of doing a text button... I feel ashamed...
-    private void handleNotificationButton() {
-        if (sharedPreferences.getBoolean(notifications, true)) {
-            notificationButtonTextView.setText(getResources().getString(R.string.on));
-            notificationButtonTextView.setTextColor(getResources().getColor(R.color.textHighlight2));
-        } else {
-            notificationButtonTextView.setText(R.string.off);
-            notificationButtonTextView.setTextColor(getResources().getColor(R.color.textSimple));
-        }
-
-        notificationButtonClick();
-    }
-
-    private void notificationButtonClick() {
-        final SharedPreferences.Editor editor = sharedPreferences.edit();
-
-        notificationButtonTextView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (notificationButtonTextView.getText() == getResources().getString(R.string.off)) {
-                    notificationButtonTextView.setText(getResources().getString(R.string.on));
-                    notificationButtonTextView.setTextColor(getResources().getColor(R.color.textHighlight2));
-
-                    editor.putBoolean(notifications, true).apply();
-                } else {
-                    notificationButtonTextView.setText(getResources().getString(R.string.off));
-                    notificationButtonTextView.setTextColor(getResources().getColor(R.color.textSimple));
-
-                    editor.putBoolean(notifications, false).apply();
-
-                }
             }
         });
     }
