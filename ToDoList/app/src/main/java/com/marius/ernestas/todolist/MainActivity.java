@@ -1,6 +1,9 @@
 package com.marius.ernestas.todolist;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
@@ -16,6 +19,7 @@ import com.marius.ernestas.todolist.navigationDrawer.DrawerItemClickListener;
 import com.marius.ernestas.todolist.navigationDrawer.DrawerListAdapter;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -25,13 +29,28 @@ public class MainActivity extends ActionBarActivity {
     private DrawerLayout drawerLayout;
     private ListView drawerListView;
     private ActionBarDrawerToggle drawerToggle;
+    private SharedPreferences sharedPreferences;
+    private String language = "languageKey";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
         database = new Database(this);
+        sharedPreferences = this.getSharedPreferences("Settings", Context.MODE_PRIVATE);
+
+        // Setting language
+        String languageToLoad = (sharedPreferences.getLong(language, 0) == 0) ? "en" : "lt";
+        Locale locale = new Locale(languageToLoad);
+        Locale.setDefault(locale);
+        Configuration config = this.getResources().getConfiguration();
+        config.locale = locale;
+
+        Resources resources = this.getBaseContext().getResources();
+        resources.updateConfiguration(config, resources.getDisplayMetrics());
+
+
+        setContentView(R.layout.activity_main);
 
         handleNavigationDrawer(savedInstanceState);
     }
