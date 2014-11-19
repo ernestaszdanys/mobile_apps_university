@@ -23,6 +23,10 @@ public class NoteAdapter extends BaseAdapter {
         this.notes = notes;
     }
 
+    public void remove(int position){
+        notes.remove(position);
+    }
+
     @Override
     public int getCount() {
         return notes.size();

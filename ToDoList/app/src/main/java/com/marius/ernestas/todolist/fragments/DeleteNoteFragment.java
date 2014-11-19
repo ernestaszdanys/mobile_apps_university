@@ -16,11 +16,15 @@ import com.marius.ernestas.todolist.database.Database;
 
 public class DeleteNoteFragment extends DialogFragment {
     private Database database;
-    private int i;
+    private NoteAdapter noteAdapter;
+    private int listViewPos;
+    private int databasePos;
 
-    public DeleteNoteFragment(Database database, int i) {
+    public DeleteNoteFragment(Database database, NoteAdapter noteAdapter, int listViewPos, int databasePos) {
         this.database = database;
-        this.i = i;
+        this.noteAdapter = noteAdapter;
+        this.listViewPos = listViewPos;
+        this.databasePos = databasePos;
     }
 
     @NonNull
@@ -31,7 +35,9 @@ public class DeleteNoteFragment extends DialogFragment {
         builder.setMessage(R.string.dialog_delete_note)
                 .setPositiveButton(R.string.dialog_delete_confirm, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        database.removeNote(i);
+                        database.removeNote(databasePos);
+                        noteAdapter.remove(listViewPos);
+                        noteAdapter.notifyDataSetChanged();
                         Toast.makeText(getActivity(), "Note deleted successfully!", Toast.LENGTH_LONG).show();
                     }
                 })

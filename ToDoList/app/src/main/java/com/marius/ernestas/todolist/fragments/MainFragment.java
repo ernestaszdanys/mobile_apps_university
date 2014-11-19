@@ -81,9 +81,7 @@ public class MainFragment extends Fragment {
                 public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
                     TextView textViewId = (TextView) view.findViewById(R.id.textViewId);
 
-                    Toast.makeText(getActivity(), textViewId.getText().toString() + "", Toast.LENGTH_LONG).show();
-
-                    DeleteNoteFragment newFragment = new DeleteNoteFragment(database, Integer.parseInt(textViewId.getText().toString()));
+                    DeleteNoteFragment newFragment = new DeleteNoteFragment(database, noteAdapter, i, Integer.parseInt(textViewId.getText().toString()));
                     newFragment.show(getActivity().getSupportFragmentManager(), "deleteConfirmation");
 
                     return false;
