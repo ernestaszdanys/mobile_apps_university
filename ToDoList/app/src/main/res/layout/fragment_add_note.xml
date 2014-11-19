@@ -2,6 +2,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:padding="@dimen/main_padding"
+    android:background="@color/application_bg"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <EditText
@@ -10,6 +11,8 @@
         android:id="@+id/editTextTitle"
         android:layout_alignParentTop="true"
         android:hint="@string/title"
+        android:layout_marginBottom="@dimen/main_gap"
+        android:layout_marginTop="@dimen/main_gap"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
@@ -21,6 +24,10 @@
         android:text="@string/date"
         android:textSize="@dimen/text_medium"
         android:id="@+id/textViewDate"
+        android:layout_marginLeft="@dimen/add_note_right_left_margins_text_views"
+        android:layout_marginStart="@dimen/add_note_right_left_margins_text_views"
+        android:layout_marginBottom="@dimen/main_gap"
+        android:layout_marginTop="@dimen/main_gap"
         android:layout_below="@+id/editTextTitle"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -33,6 +40,10 @@
         android:clickable="true"
         android:textSize="@dimen/text_medium"
         android:textColor="@color/textHighlight2"
+        android:layout_marginRight="@dimen/add_note_right_left_margins_text_views"
+        android:layout_marginEnd="@dimen/add_note_right_left_margins_text_views"
+        android:layout_marginBottom="@dimen/main_gap"
+        android:layout_marginTop="@dimen/main_gap"
         android:layout_below="@+id/editTextTitle"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
@@ -43,6 +54,10 @@
         android:text="@string/importance"
         android:textSize="@dimen/text_medium"
         android:id="@+id/imageViewImportance"
+        android:layout_marginLeft="@dimen/add_note_right_left_margins_text_views"
+        android:layout_marginStart="@dimen/add_note_right_left_margins_text_views"
+        android:layout_marginBottom="@dimen/main_gap"
+        android:layout_marginTop="@dimen/main_gap"
         android:layout_below="@+id/textViewDate"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -51,6 +66,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/spinnerImportance"
+        android:layout_marginBottom="@dimen/main_gap"
+        android:layout_marginTop="@dimen/main_gap"
         android:layout_below="@+id/textButtonSetDate"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
@@ -62,6 +79,7 @@
         android:ems="10"
         android:hint="@string/description"
         android:id="@+id/editTextDescription"
+        android:layout_marginBottom="@dimen/main_gap"
         android:layout_below="@+id/spinnerImportance"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"

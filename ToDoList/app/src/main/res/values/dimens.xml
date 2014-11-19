@@ -14,5 +14,7 @@
     <dimen name="note_item_importance_text_margin">10dp</dimen>
     <dimen name="note_item_text_view_margin">2dp</dimen>
     <dimen name="note_item_margin">10dp</dimen>
+    <dimen name="main_gap">5dp</dimen>
+    <dimen name="add_note_right_left_margins_text_views">11dp</dimen>
 
 </resources>

@@ -2,6 +2,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:padding="@dimen/main_padding"
+    android:background="@color/application_bg"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <TextView
@@ -10,6 +11,8 @@
         android:text="@string/notifications"
         android:textSize="@dimen/text_medium"
         android:id="@+id/textViewNotifications"
+        android:layout_marginBottom="@dimen/main_gap"
+        android:layout_marginTop="@dimen/main_gap"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -22,15 +25,25 @@
         android:textColor="@color/textHighlight2"
         android:id="@+id/textButtonNotifications"
         android:clickable="true"
+        android:layout_marginBottom="@dimen/main_gap"
+        android:layout_marginTop="@dimen/main_gap"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider2"
+        android:layout_below="@+id/textButtonNotifications"/>
 
     <Spinner
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/spinnerLanguages"
         android:layout_below="@+id/textButtonNotifications"
+        android:layout_marginBottom="@dimen/main_gap"
+        android:layout_marginTop="@dimen/main_gap"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
@@ -40,7 +53,15 @@
         android:text="@string/language"
         android:textSize="@dimen/text_medium"
         android:id="@+id/textViewChangeLanguage"
+        android:layout_marginBottom="@dimen/main_gap"
+        android:layout_marginTop="@dimen/main_gap"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignBottom="@+id/spinnerLanguages"/>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider2"
+        android:layout_below="@+id/spinnerLanguages"/>
 </RelativeLayout>

@@ -14,4 +14,5 @@
 
     <!--action bar color-->
     <color name="divider">#3F51B5</color>
+    <color name="divider2">#d0d0d0</color>
 </resources>
