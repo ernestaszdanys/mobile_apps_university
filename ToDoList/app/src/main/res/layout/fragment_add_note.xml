@@ -89,14 +89,6 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/shadow"
-        android:background="@drawable/ic_shadow"
-        android:layout_below="@+id/editTextDescription"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/buttonAdd"
         android:background="@drawable/button_add"
         android:layout_below="@+id/editTextDescription"
