@@ -27,7 +27,7 @@ public class DrawerItemClickListener implements ListView.OnItemClickListener {
 
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-        Fragment fragment = null;
+        Fragment fragment;
 
         switch (position) {
             case 0:
@@ -45,7 +45,17 @@ public class DrawerItemClickListener implements ListView.OnItemClickListener {
         }
 
         drawerLayout.closeDrawers();
+
         // Replace current fragment with selected
-        fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
+        if (position != 0) {
+            fragmentManager.beginTransaction().replace(R.id.container, fragment).addToBackStack(null).commit();
+        } else {
+            // If user selected main fragment - delete previous fragments from stack
+            for (int i = 0; i < fragmentManager.getBackStackEntryCount(); ++i) {
+                fragmentManager.popBackStack();
+            }
+
+            fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
+        }
     }
 }
