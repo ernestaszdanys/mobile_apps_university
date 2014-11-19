@@ -17,15 +17,6 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/shadow"
-        android:background="@drawable/ic_shadow"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/listViewNotes"
-        android:layout_alignEnd="@+id/listViewNotes"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/buttonNew"
         android:background="@drawable/button_add"
         android:layout_alignParentBottom="true"
